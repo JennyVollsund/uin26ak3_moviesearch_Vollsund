@@ -26,19 +26,18 @@ export default function Home(){
     },[])
 
     
-
-    const getMovies = async(query)=>{
-        try
-        {
-            const response = await fetch(`${baseUrl}${apiKey}`)
-            const data = await response.json()
-            console.log(data)
-
+    const getMovies = async (query) => {
+        try {
+            const response = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`);
+            const data = await response.json();
+            if (data.Search) {
+                setMovies(data.Search);
+            }
+        } catch (err) {
+            console.error("Feil ved henting:", err);
         }
-        catch(err){
-            console.error(err);
-        }
-    }
+    };
+ 
     const handleChange = (e) => {
     const value = e.target.value
     setSearch(value)
@@ -63,13 +62,19 @@ export default function Home(){
         <main>
             <h1>Forside</h1>
             <form onSubmit={handleSubmit}>
-                <label>
+                <label htmlFor={"search"}>
                     Søk etter film:
                     <input type="search" placeholder="Harry Potter" onChange={handleChange} onFocus={() => setFocused(true)} /*onBlur={() => setFocused(false)}*/></input>
                 </label>
                 {focused ?
                     <History history={history} setSearch={setSearch} /> : null}
-                <button onClick={getMovies}>Søk</button>
+                <button onClick={() => getMovies(search)}>Søk</button>
+
+                <ul>
+                    {movies.map((movie)=>(
+                        <MovieCard key={movie.imdbID} movie={movie} />
+                    ))}
+                </ul>
 
             </form>
 
