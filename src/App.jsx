@@ -13,7 +13,8 @@ function App() {
   return (
     <Routes>
       <Route index element={<Home/>} />
-      <Route path=":movie" element={<Movie />} />
+      
+      <Route path="/movie/:id" element={<Movie />} />
     </Routes>
   )
 }

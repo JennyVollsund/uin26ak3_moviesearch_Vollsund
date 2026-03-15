@@ -9,7 +9,9 @@ export default function Home(){
     const [focused, setFocused] = useState(false)
     const [history, setHistory] = useState(storedHistory ? JSON.parse(storedHistory) : [])
 
-
+//her har jeg satt opp en søkefunksjon som henter filmer fra APIet
+//gjordt sånn at hvis man søker skal det ikke komme noe opp før brukeren har skrevet 3 bokstaver.
+//fikset sånn at det er de ti første James Bond filmene som vises på forsiden.
 
 
     console.log("denne kommer fra storage", storedHistory)
