@@ -24,14 +24,18 @@ export default function Movie(){
 
 
     return (
-        <main>
-            <article>
-                <h1>{movieDetails.Title}</h1>
-                <img src={movieDetails.Poster} alt={movieDetails.Title} />
-                <p>{movieDetails.Plot}</p>
-                <p>År: {movieDetails.Year}</p>
-                <p>Skuespillere: {movieDetails.Actors}</p>
-            </article>
+
+<main className="movie-page">
+          <article className="movie-details">
+             
+
+             <h1>{movieDetails.Title}</h1>
+             <img src={movieDetails.Poster} alt={movieDetails.Title} className="movie-poster" />
+             <p>{movieDetails.Plot}</p>
+             
+             <p>År: {movieDetails.Year}</p>
+             <p>Skuespillere: {movieDetails.Actors}</p>
+             </article>
         </main>
     )
 }

@@ -41,6 +41,7 @@
   color: #888;
 }
 
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -48,11 +49,29 @@ body {
   color: white;
 }
 
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+h1 {
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+form {
+  margin-top: 40px;
+}
+
 
 input {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #444;
+  margin: 5px 5px 5px 0;
 }
 
 button {
@@ -62,32 +81,14 @@ button {
   background-color: #ffcf24;
   color: #1e1c1c;
   font-weight: bold;
+  margin: 5px 0;
 }
-
-h1 {
-  display: inline-block;
-  margin-right: 1rem;
-  font-weight: 900;
-}
-
-
-
-
-input, button {
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid #444;
-  margin: 5px;
- 
-}
-
-
 
 
 ul {
   display: flex;
-  flex-wrap: wrap;     
-  justify-content: center; 
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   list-style: none;
   padding: 0;
@@ -95,14 +96,75 @@ ul {
 }
 
 li {
-width: 350px;
+  width: 350px;
+  display:grid
 }
+
+
+article {
+  background-color: #2a2a2a;
+  padding: 6px;
+  border-radius: 20px;
+  height: 100%;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 5px;
+  height: 400px;
+  object-fit: cover;
+
+
+}
+
 
 a {
   color: #fff;
   text-decoration: none;
-
 }
+
+.movie-details {
+  display: flex;
+  flex-wrap: wrap;        
+  gap: 20px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+
+.movie-details h1 {
+  width: 100%;            
+  font-size: 28px;
+  margin: 0 0 10px 0;
+}
+
+
+.movie-poster {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  
+}
+
+
+.movie-details p {
+  
+  max-width: 700px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+
+
+
 
 
 
