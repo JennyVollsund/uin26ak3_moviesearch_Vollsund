@@ -8,8 +8,6 @@ export default function MovieCard({ movie }) {
             <article>
                 <Link to={`/movie/${movie.imdbID}`}>
                     <h2>{movie.Title}</h2>
-                    <p>{movie.Year}</p>
-
                     <img src={movie.Poster !== "N/A" ? movie.Poster : fallback} alt={movie.Title}
                         onError={(e) => {
                             if (e.target.src !== fallback) {
@@ -18,6 +16,7 @@ export default function MovieCard({ movie }) {
                         }}
                     />
                 </Link>
+                <p>{movie.Year}</p>
             </article>
         </li>
     )
