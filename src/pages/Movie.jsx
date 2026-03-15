@@ -10,15 +10,18 @@ export default function Movie(){
     const apiKey = import.meta.env.VITE_APP_API_KEY
 
     const getMovie = async ()=> {
-        const response = await fetch('https://www.omdbapi.com/?i=${id}&apikey=${apiKey}')
+        const response = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`)
         const data = await response.json()
         setMovieDetails(data)
     }
 
 
-        useEffect(()=>{
+    useEffect(() => {
         getMovie()
-    },[])
+    }, [])
+
+    if (!movieDetails) return <p>Laster...</p>
+
 
     return (
         <main>

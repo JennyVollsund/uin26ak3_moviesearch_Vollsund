@@ -36,7 +36,7 @@ export default function Home(){
                 setMovies(data.Search);
             }
         } catch (err) {
-            console.error("Feil ved henting:", err);
+            console.error("Feil ved henting:", err)
         }
     };
  
