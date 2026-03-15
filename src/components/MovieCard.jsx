@@ -1,20 +1,15 @@
 import { Link } from "react-router-dom"
 
 export default function MovieCard({ movie }) {
-    const fallback = "https://via.placeholder.com/300x450?text=No+Image"
+    
+
 
     return (
         <li>
             <article>
                 <Link to={`/movie/${movie.imdbID}`}>
                     <h2>{movie.Title}</h2>
-                    <img src={movie.Poster !== "N/A" ? movie.Poster : fallback} alt={movie.Title}
-                        onError={(e) => {
-                            if (e.target.src !== fallback) {
-                                e.target.src = fallback
-                            }
-                        }}
-                    />
+                    <img src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Image"} alt={movie.Title}/>
                 </Link>
                 <p>{movie.Year}</p>
             </article>
@@ -22,3 +17,4 @@ export default function MovieCard({ movie }) {
     )
 }
     
+//prøvd å fikse de ødlagte bildene/ de som ikke finnes

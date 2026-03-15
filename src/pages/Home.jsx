@@ -14,7 +14,7 @@ export default function Home(){
 //fikset sånn at det er de ti første James Bond filmene som vises på forsiden.
 
 
-    console.log("denne kommer fra storage", storedHistory)
+    //console.log("denne kommer fra storage", storedHistory)
 
     const baseUrl= `http://www.omdbapi.com/?s=${search}&apikey=`
     const apiKey= import.meta.env.VITE_APP_API_KEY
@@ -59,7 +59,7 @@ export default function Home(){
         setHistory((prev) =>[...prev,search])
         e.target.reset()
     }
-    console.log(history)
+    //console.log(history)
   return (
         <main>
             <h1>Forside</h1>
